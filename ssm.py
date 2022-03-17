@@ -97,10 +97,7 @@ def evolve3(M, boundary='wrap'):
     Args:
         M (numpy.array): the matrix to be evolved
         boundary (str): Either wrap, fill, or pad
-    If the similarity ratio SIM_R of neighbours
-    to the entire neighborhood population
-    is lower than the SIM_T,
-    then the person moves to an empty house.
+    If SIM_R < SIM_T, then the person moves to an empty house.
     """
     kws = dict(mode='same', boundary=boundary)
     B_neighs = convolve2d(M == 0, KERNEL, **kws)
@@ -122,10 +119,7 @@ def evolve4(M, boundary='wrap'):
     Args:
         M (numpy.array): the matrix to be evolved
         boundary (str): Either wrap, fill, or pad
-    If the similarity ratio SIM_R of neighbours
-    to the entire neighborhood population
-    is lower than the SIM_T,
-    then the person moves to an empty house.
+    If SIM_R < SIM_T, then the person moves to an empty house.
     """
     kws = dict(mode='same', boundary=boundary)
     B_neighs = convolve2d(M == 0, KERNEL, **kws).astype(np.float16)
@@ -297,12 +291,6 @@ plt.show()
 
 
 
-
-
-
-
-
-
 ##### MORE WEBSITE PLOTS 5: CONNECTED COMPONENTS
 from Adjacency_for_SquareLattice import adjacency_from_square_lattice
 import networkx as nx
@@ -359,9 +347,6 @@ plt.tight_layout()
 plt.savefig('/Users/Luca/Downloads/Schellign_CC.svg',
             transparent=True, bbox_extra_artists=(lgd,), bbox_inches='tight')
 plt.show()
-
-
-
 
 
 
