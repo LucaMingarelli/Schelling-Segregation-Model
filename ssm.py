@@ -113,6 +113,7 @@ def evolve3(M, boundary='wrap'):
     filling[N_B_dissatified:N_B_dissatified + N_R_dissatified] = 1
     np.random.shuffle(filling)
     M[M==-1] = filling
+    return M
 
 def evolve4(M, boundary='wrap'):
     """
